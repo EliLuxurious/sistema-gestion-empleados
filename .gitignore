@@ -1,0 +1,22 @@
+# Java / Spring Boot
+backend_empleado/target/
+*.class
+*.log
+
+# Angular / Node
+frontend-empleado/node_modules/
+frontend-empleado/dist/
+frontend-empleado/.angular/
+frontend-empleado/.cache/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Archivos sensibles
+.env

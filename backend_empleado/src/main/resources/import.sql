@@ -1,0 +1,3 @@
+INSERT INTO empleado (nombre, apellido, dni, genero, estado_civil) VALUES ('Christian', 'Garcia Villegas', '12345678', 'Masculino', 'Casado');
+INSERT INTO empleado (nombre, apellido, dni, genero, estado_civil) VALUES ('Ana', 'Martinez Ruiz', '87654321', 'Femenino', 'Soltero');
+INSERT INTO empleado (nombre, apellido, dni, genero, estado_civil) VALUES ('Carlos', 'Perez Lopez', '45678912', 'Masculino', 'Divorciado');
