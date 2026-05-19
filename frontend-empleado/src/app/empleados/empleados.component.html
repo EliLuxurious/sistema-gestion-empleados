@@ -1,0 +1,92 @@
+<div class="contenedor">
+
+    <h1>Sistema de Gestión de Empleados</h1>
+
+    <div class="mensaje" *ngIf="mensaje">
+        {{ mensaje }}
+    </div>
+
+    <section class="card">
+        <h2>{{ empleado.id ? 'Editar empleado' : 'Registrar empleado' }}</h2>
+
+        <form (ngSubmit)="guardar()">
+
+            <div class="form-grid">
+                <input type="text" name="nombre" [(ngModel)]="empleado.nombre" placeholder="Nombre" required>
+
+                <input type="text" name="apellido" [(ngModel)]="empleado.apellido" placeholder="Apellido" required>
+
+                <input type="text" name="dni" [(ngModel)]="empleado.dni" placeholder="DNI" maxlength="8" required>
+
+                <select name="genero" [(ngModel)]="empleado.genero" required>
+                    <option value="">Seleccione género</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+
+                <select name="estadoCivil" [(ngModel)]="empleado.estadoCivil" required>
+                    <option value="">Estado civil</option>
+                    <option value="Soltero">Soltero</option>
+                    <option value="Casado">Casado</option>
+                    <option value="Divorciado">Divorciado</option>
+                </select>
+            </div>
+
+            <div class="acciones-form">
+                <button type="submit">
+                    {{ empleado.id ? 'Actualizar' : 'Guardar' }}
+                </button>
+
+                <button type="button" class="secundario" (click)="limpiarFormulario()">
+                    Limpiar
+                </button>
+            </div>
+
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Listado de empleados</h2>
+
+        <div class="buscador">
+            <input type="text" [(ngModel)]="textoBusqueda" placeholder="Buscar por nombre, apellido o DNI">
+
+            <button type="button" (click)="buscar()">Buscar</button>
+            <button type="button" class="secundario" (click)="textoBusqueda=''; listar()">Ver todos</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    <th>Género</th>
+                    <th>Estado civil</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let emp of empleados">
+                    <td>{{ emp.id }}</td>
+                    <td>{{ emp.nombre }}</td>
+                    <td>{{ emp.apellido }}</td>
+                    <td>{{ emp.dni }}</td>
+                    <td>{{ emp.genero }}</td>
+                    <td>{{ emp.estadoCivil }}</td>
+                    <td>
+                        <button type="button" (click)="editar(emp)">Editar</button>
+                        <button type="button" class="eliminar" (click)="eliminar(emp.id)">Eliminar</button>
+                    </td>
+                </tr>
+
+                <tr *ngIf="empleados.length === 0">
+                    <td colspan="7">No hay empleados registrados</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>

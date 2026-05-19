@@ -1,0 +1,222 @@
+:host {
+    display: block;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+    min-height: 100vh;
+    padding: 30px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4a4a4a;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #d81b60; /* Fucsia elegante */
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    color: #e91e63; /* Rosado intenso */
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #f8bbd0;
+    padding-bottom: 12px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(233, 30, 99, 0.08);
+    border: 1px solid #fce4ec;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.12);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+input,
+select {
+    padding: 12px 16px;
+    border: 1px solid #f48fb1; /* Borde rosado suave */
+    border-radius: 8px;
+    font-size: 14.5px;
+    color: #4a4a4a;
+    background-color: #fffafb;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input:focus,
+select:focus {
+    border-color: #d81b60;
+    box-shadow: 0 0 0 3px rgba(216, 27, 96, 0.15);
+    background-color: #ffffff;
+}
+
+input::placeholder {
+    color: #aeb6bf;
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    background: #e91e63; /* Rosado intenso */
+    color: white;
+    border-radius: 8px;
+    font-size: 14.5px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.2);
+}
+
+button:hover {
+    background: #d81b60;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(233, 30, 99, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(233, 30, 99, 0.2);
+}
+
+.secundario {
+    background: #fce4ec; /* Rosado muy claro / gris rosado */
+    color: #880e4f;
+    box-shadow: 0 4px 10px rgba(248, 187, 208, 0.3);
+}
+
+.secundario:hover {
+    background: #f8bbd0;
+}
+
+.eliminar {
+    background: #c2185b; /* Rojo/rosado oscuro elegante */
+    box-shadow: 0 4px 10px rgba(194, 24, 91, 0.2);
+}
+
+.eliminar:hover {
+    background: #ad1457;
+}
+
+.acciones-form {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buscador {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.buscador input {
+    flex: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #fce4ec;
+}
+
+th {
+    background: #fce4ec; /* Encabezado rosado claro */
+    color: #880e4f;
+    font-weight: 600;
+    padding: 16px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid #fce4ec;
+    padding: 16px;
+    text-align: center;
+    color: #4a4a4a;
+    font-size: 14.5px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #fffafb;
+}
+
+.mensaje {
+    background: #fce4ec; /* Fondo rosado pastel */
+    color: #880e4f;
+    padding: 16px 20px;
+    border-left: 5px solid #d81b60;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.08);
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buscador {
+        flex-direction: column;
+    }
+
+    .acciones-form {
+        justify-content: flex-start;
+    }
+
+    table {
+        font-size: 13.5px;
+    }
+    
+    th, td {
+        padding: 12px 10px;
+    }
+    
+    button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .acciones-form button {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    
+    .acciones-form button:last-child {
+        margin-right: 0;
+    }
+}
